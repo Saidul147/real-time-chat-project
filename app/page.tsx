@@ -18,7 +18,7 @@ export default async function  Home() {
 
   // if (!isLoaded) return <div>Loading...</div>;
   // if (!isSignedIn) return <div>Please sign in</div>;
-
+console.log(users)
 
   return (
     <div className="p-5">
