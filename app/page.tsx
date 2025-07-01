@@ -18,12 +18,12 @@ export default async function  Home() {
 
 
   return (
-    <div className="p-6">
+    <div className="p-5">
       <div className="flex justify-end px-10 py-3">
         <UserButton afterSwitchSessionUrl="/sign-in" />
       </div>
       <Button color="primary" variant="solid" className="py-3!">
-        click
+        click here
       </Button>
       <Button color="primary" variant="outlined" className="py-3! ml-2">
         click
