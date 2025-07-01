@@ -1,6 +1,7 @@
 
 
 import { connectMONGO } from "@/config/db-config";
+import { GetCurrentUserFromMongoDB } from "@/server-actions/users";
 import { UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import { Button } from "antd";
@@ -11,7 +12,9 @@ connectMONGO()
 export default async function  Home() {
 
   // const {isLoaded,isSignedIn,user} = useUser() //if i use it then i have to set use client
-  const users = await currentUser() //this is server component
+  // const users = await currentUser() //this is server component
+
+  const users = await GetCurrentUserFromMongoDB()
 
   // if (!isLoaded) return <div>Loading...</div>;
   // if (!isSignedIn) return <div>Please sign in</div>;
