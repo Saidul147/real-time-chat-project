@@ -1,13 +1,12 @@
 
 
 import { connectMONGO } from "@/config/db-config";
-import { GetCurrentUserFromMongoDB } from "@/server-actions/users";
+import GetCurrentUserFromMongoDB from "@/server-actions/users";
+
 import { UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import { Button } from "antd";
-import Image from "next/image";
 
-connectMONGO()
 
 export default async function  Home() {
 
@@ -18,12 +17,12 @@ export default async function  Home() {
 
   // if (!isLoaded) return <div>Loading...</div>;
   // if (!isSignedIn) return <div>Please sign in</div>;
-console.log(users)
+console.log(users,"userssss")
 
   return (
     <div className="p-5">
       <div className="flex justify-end px-10 py-3">
-        <UserButton afterSwitchSessionUrl="/sign-in" />
+        {/* <UserButton afterSwitchSessionUrl="/sign-in" /> */}
       </div>
       <Button color="primary" variant="solid" className="py-3!">
         click here
@@ -32,9 +31,9 @@ console.log(users)
         click
       </Button>
       <div className="flex flex-col gap-2 mt-3">
-        <span>Name: {users?.firstName} {users?.lastName}</span>
-        <span>userName: {users?.id}</span>
-        <span>userName: {users?.username}</span>
+        <span>Name: {users?.name}</span>
+        <span>Id: {users?._id}</span>
+        <span>userName: {users?.userName}</span>
       </div>
     </div>
   );

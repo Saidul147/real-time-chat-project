@@ -4,7 +4,7 @@ import { currentUser } from "@clerk/nextjs/server";
 
 connectMONGO();
 
-export const GetCurrentUserFromMongoDB = async () => {
+ const GetCurrentUserFromMongoDB = async () => {
     try {
         const clerkUser = await currentUser()
         let clerkEmail = "";
@@ -34,3 +34,5 @@ export const GetCurrentUserFromMongoDB = async () => {
         }
     }
 }
+
+export default GetCurrentUserFromMongoDB;
